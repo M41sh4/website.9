@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Inspiratif - INKLUSIFA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="Picture/logo.png" alt="Logo Inklusifa"> 
+                    PEKA
+                </a>
+            </div>
+
+            <i class="fa-solid fa-bars" onclick="showMenu()" id="menuOpen"></i>
+            
+
+            <nav class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()" id="menuClose"></i>
+                
+                <a href="index.html">Home</a> 
+                
+                
+                        <a href="apa-itu-abk.html">Apa Itu ABK</a>
+                        <a href="jenis-abk.html">Jenis ABK</a>
+                    <a href="solusi-dan-dukungan.html">Solusi dan Dukungan</a> 
+                <a href="kisah-inspiratif.html" class="active">Kisah Inspiratif</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title">MENGINSPIRASI MASA DEPAN: KISAH SUKSES INSPIRATIF</h1>
+            <p class="hero-description">
+                Cerita nyata tentang perjuangan dan harapan anak-anak berkebutuhan khusus.
+            </p>
+        </div>
+    </section>
+
+    <section class="why-important">
+        <div class="container importance-content">
+            <div class="course">
+                <h2>Macam Macam Cerita</h2>
+                <p>Nur Syahwa Syakhila, siswi tunanetra MAN 11, belajar efektif melalui praktek langsung. Ia adalah penghafal Al-Qur'an 30 juz, memulai otodidak sejak usia 7 tahun dan menjaga hafalannya dengan setoran 5 kali sehari. Bercita-cita menjadi Dosen Ilmu Tafsir.</p>
+                <p>Rezky Putra Hilmansyah, siswa tunanetra MAN 11 Jakarta, unggul dalam belajar melalui praktek langsung dan adaptasi mandiri. Bakat utamanya adalah catur, yang ia tekuni untuk meningkatkan kemampuan berpikir. Di sekolah inklusi, ia memiliki hubungan baik dan merasa teman-temannya peduli.</p>
+                <p>Muhammad K. Davi Ramadhan (Davi) adalah seorang Anak Berkebutuhan Khusus (ABK) yang mengalami gangguan pendengaran (Tuli/Tuna Rungu). Meskipun memiliki keterbatasan, Davi mampu melakukan kegiatan sehari-hari seperti makan, mandi, dan mencuci piring.</p>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <section class="service-gallery">
+        <div class="container" style="text-align: center; margin-bottom: 20px;">
+            <h1 style="color: var(--primary-color);">Mendalami Cerita Mereka</h1>
+        </div>
+        <div class="container gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="Picture/kisah-inspiratif-2.jpeg" alt="Anak menulis">
+                <div class="gallery-content">
+                    <h3>Nur Syahwa Syakhila: Penghafal Al-Qur'an 30 juz</h3>
+                    <p>Siswi tunanetra MAN 11, belajar efektif melalui praktek langsung. Ia adalah penghafal Al-Qur'an 30 juz.</p>
+                    <a href="Nur-Syahwa-Syakhila.html" class="read-more-btn">Selengkapnya →</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Picture/kisah-inspiratif-1.jpeg" alt="Anak melompat tali">
+                <div class="gallery-content">
+                    <h3>Rezky Putra Hilmansyah: Pemain Catur</h3>
+                    <p> Siswa tunanetra MAN 11 Jakarta, unggul dalam belajar melalui praktek langsung dan adaptasi mandiri. Bakat utamanya adalah catur</p>
+                    <a href="Rezky-Putra-Hilmansyah.html" class="read-more-btn">Selengkapnya →</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Picture/kisah-inspiratif-3.jpeg" alt="Anak tertawa dengan teman">
+                <div class="gallery-content">
+                    <h3>Muhammad K. Davi Ramadhan: Tuli/Tuna Rungu</h3>
+                    <p> Seorang Anak Berkebutuhan Khusus (ABK) yang mengalami gangguan pendengaran (Tuli/Tuna Rungu). Meskipun memiliki keterbatasan, Davi mampu melakukan kegiatan sehari-hari.</p>
+                    <a href="Muhammad-K-Davi-Ramadhan.html" class="read-more-btn">Selengkapnya →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="additional-text-box" style="background-color: #e0f7fa; padding: 70px 0;">
+        <div class="container" style="max-width: 700px; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; margin-bottom: 30px;">Bagikan Kisah Inspiratif Anda</h2>
+            <p style="text-align: center; margin-bottom: 25px; color: #555;">Cerita Anda memberikan harapan. Kami mengundang Anda untuk berbagi pengalaman, tantangan, dan keberhasilan anak Anda.</p>
+            
+            <form action="https://formsubmit.co/m41sh4.aqila@gmail.com" method="POST" style="display: grid; gap: 15px;">
+                
+                <input type="hidden" name="_subject" value="Kisah Inspiratif Baru dari INKLUSIFA">
+
+                <input type="hidden" name="_next" value="URL_HALAMAN_TERIMA_KASIH_ANDA">
+
+                <div class="form-group">
+                    <label for="nama_orangtua" style="display: block; margin-bottom: 5px; font-weight: 600;">Nama Orang Tua/Wali:</label>
+                    <input type="text" id="nama_orangtua" name="Nama Orang Tua" required 
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: 600;">Email (Tidak akan dipublikasikan):</label>
+                    <input type="email" id="email" name="Email Pengirim" required 
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nama_anak" style="display: block; margin-bottom: 5px; font-weight: 600;">Nama Anak (Inisial atau Nama Panggilan):</label>
+                    <input type="text" id="nama_anak" name="Nama Anak" 
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="kisah" style="display: block; margin-bottom: 5px; font-weight: 600;">Kisah Anda (Maks. 500 kata):</label>
+                    <textarea id="kisah" name="Kisah yang Dikirim" rows="6" required 
+                              style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="izin_publikasi" name="Izin Publikasi" value="Ya, Diizinkan" required>
+                    <label for="izin_publikasi" style="font-size: 0.9em;">Saya mengizinkan INKLUSIFA untuk menyunting dan mempublikasikan kisah ini.</label>
+                </div>
+                
+                <button type="submit" 
+                        style="background-color: #00aaff; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: 700; transition: background-color 0.3s ease;">
+                    Kirim Kisah <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </form>
+            </div>
+    </section>
+
+    <section class="footer">
+        <h4>Hubungi Kami</h4>
+        <p>Kami terbuka untuk mendengarkan kebutuhan Anda dan berkolaborasi dalam mendukung anak Anda.</p>
+        <div class="icons">
+            <span class="fa-solid fa-envelope" aria-hidden="true"></span> 
+            
+        </div>
+        <p>Dibuat dengan <i class="fa-solid fa-heart" aria-hidden="true"></i> untuk Komunitas Inklusif</p>
+    </section>
+    
+    <script>
+        // --- Logika Menu Mobile (Hamburger) ---
+        var navLinks = document.getElementById("navLinks");
+        var menuOpenIcon = document.getElementById("menuOpen");
+        var menuCloseIcon = document.getElementById("menuClose");
+
+        function showMenu(){
+            navLinks.style.right = "0"; 
+            menuOpenIcon.style.display = "none"; 
+            menuCloseIcon.style.display = "block";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-250px"; 
+            menuOpenIcon.style.display = "block"; 
+            menuCloseIcon.style.display = "none";
+            
+            // Tutup semua dropdown saat menu utama ditutup
+            closeAllDropdowns();
+        }
+        
+        // Fungsi placeholder untuk dropdown yang tidak digunakan di halaman ini, tapi ada di JS asli Anda
+        function closeAllDropdowns() {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].style.display = "none";
+            }
+        }
+
+        // Fungsi placeholder untuk dropdown yang tidak digunakan di halaman ini, tapi ada di JS asli Anda
+        function toggleDropdown(button) {
+            var dropdownContent = button.nextElementSibling;
+            closeAllDropdowns();
+
+            if (dropdownContent) {
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            }
+        }
+        
+        // Tutup dropdown jika mengklik di luar area menu
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn') && !event.target.matches('.fa-caret-down')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    if (dropdowns[i].style.display === "block") {
+                        dropdowns[i].style.display = "none";
+                    }
+                }
+            }
+        }
+        
+        // Jaga agar menu tetap terlihat di layar lebar dan hilangkan ikon mobile
+        function checkScreenSize() {
+             if (window.innerWidth > 768) {
+                 navLinks.style.right = '0';
+                 menuOpenIcon.style.display = "none"; 
+                 menuCloseIcon.style.display = "none";
+            } else {
+                // Di mobile, pastikan menu tersembunyi secara default
+                navLinks.style.right = '-250px';
+                menuOpenIcon.style.display = "block";
+                menuCloseIcon.style.display = "none";
+            }
+        }
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+    </script>
+    
+    
+</body>
+</html>

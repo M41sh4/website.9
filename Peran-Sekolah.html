@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEKA - Peran Sekolah dalam Pendidikan Inklusif ABK</title> 
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="Picture/logo.png" alt="Logo PEKA"> 
+                    PEKA
+                </a>
+            </div>
+
+            <i class="fa-solid fa-bars" onclick="showMenu()" id="menuOpen"></i>
+            
+            <nav class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()" id="menuClose"></i>
+                
+                <a href="index.html">Home</a> 
+                
+                <a href="apa-itu-abk.html" >Apa Itu ABK</a>
+                <a href="jenis-abk.html">Jenis ABK</a>
+                
+                <a href="solusi-dan-dukungan.html" class="active">Solusi dan Dukungan</a> 
+                <a href="kisah-inspiratif.html">Kisah Inspiratif</a>
+               </nav>
+                
+        </div>
+    </header>
+
+    <main> <section class="hero-section">
+            <div class="hero-overlay"></div> 
+            <div class="hero-content container">
+                <h1 class="hero-title">MEMAHAMI ANAK BERKEBUTUHAN KHUSUS (ABK)</h1>
+                <p class="hero-description">
+                Edukasi yang mendalam dan empati adalah langkah pertama menuju pendidikan inklusif yang sejati.
+                </p>
+            </div>
+        </section>
+
+        <section class="main-content school-role-section">
+            <div class="container">
+                <h2 class="main-title">🏫 Peran Sekolah: Pilar Utama Pendidikan Inklusif ABK</h2>
+                <p class="main-description">Sekolah memegang peranan krusial dalam menciptakan lingkungan belajar yang adaptif dan inklusif. Pendekatan yang terstruktur mendukung potensi penuh setiap siswa.</p>
+
+                <div class="school-grid-container">
+                    
+                    <div class="role-card institution-role">
+                        <h3 class="card-title-colored"><span class="fa-solid fa-building-columns" aria-hidden="true"></span> Peran Institusi Sekolah</h3>
+                        <ul>
+                            <li>Kurikulum yang Diferensiasi: Menyediakan kurikulum khusus atau modifikasi yang disesuaikan dengan kebutuhan individu anak.</li>
+                            <li>Guru Kreatif & Adaptif: Mewajibkan guru untuk memiliki metode pengajaran yang fleksibel, kreatif, dan responsif.</li>
+                            <li>Media Visual & Motorik: Memanfaatkan alat bantu visual, taktil, dan aktivitas gerak dalam proses belajar mengajar.</li>
+                            <li>Kolaborasi Intensif: Membangun kerja sama yang kuat dengan orang tua, terapis, dan profesional lainnya (tim multidisiplin).</li>
+                        </ul>
+                    </div>
+
+                    <div class="role-card tips-role">
+                        <h3 class="card-title-colored"><span class="fa-solid fa-graduation-cap" aria-hidden="true"></span> Strategi Mendampingi ABK di Kelas</h3>
+                        <ul>
+                            <li>Visual & Gerak: Mengutamakan penggunaan jadwal visual, kartu instruksi, dan aktivitas motorik untuk fokus yang lebih baik.</li>
+                            <li>Target Realistis: Menetapkan tujuan pembelajaran individual (IEP/PPI) yang terukur dan realistis sesuai tahapan perkembangan anak.</li>
+                            <li>Komunikasi Terbuka: Melakukan komunikasi intens dan rutin dengan orang tua mengenai kemajuan, tantangan, dan strategi di rumah.</li>
+                            <li>Adaptasi Lingkungan: Melakukan penataan ulang lingkungan kelas agar mudah diakses, minim gangguan, dan aman bagi ABK (misal: area tenang).</li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="solusi-dan-dukungan.html" class="explore-btn">Kembali Ke Solusi dan Dukungan →</a>
+                </div>
+                
+            </div>
+        </section>
+    </main> <footer class="footer">
+        <h4>Hubungi Kami</h4>
+        <p>Kami terbuka untuk mendengarkan kebutuhan Anda dan berkolaborasi dalam mendukung anak Anda.</p>
+        <div class="icons">
+            <span class="fa-solid fa-envelope" aria-hidden="true"></span> 
+        </div>
+        <p>Dibuat dengan <span class="fa-solid fa-heart" aria-hidden="true"></span> untuk Komunitas Inklusif</p>
+    </footer>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var menuOpenIcon = document.getElementById("menuOpen");
+        var menuCloseIcon = document.getElementById("menuClose");
+
+        function showMenu(){
+            navLinks.style.right = "0"; 
+            menuOpenIcon.style.display = "none"; 
+            setTimeout(function() { menuCloseIcon.style.display = "block"; }, 300); 
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-250px"; 
+            menuOpenIcon.style.display = "block"; 
+            menuCloseIcon.style.display = "none";
+        }
+        
+        function checkScreenSize() {
+             if (window.innerWidth > 768) {
+                 navLinks.style.right = '0';
+                 menuOpenIcon.style.display = "none"; 
+                 menuCloseIcon.style.display = "none";
+            } else {
+                navLinks.style.right = '-250px';
+                menuOpenIcon.style.display = "block";
+                menuCloseIcon.style.display = "none";
+            }
+        }
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+    </script>
+    
+</body>
+</html>

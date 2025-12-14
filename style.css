@@ -1,0 +1,882 @@
+/* --- GLOBAL STYLING & SMOOTH SCROLL --- */
+html {
+    scroll-behavior: smooth; 
+}
+
+/* --- PALET WARNA --- */
+:root {
+    --primary-color: #a0522d;  /* Sienna (Coklat Tua) */
+    --accent-color: #eea50b; /* Kuning */
+    --text-light: #ffffff; 
+    --text-dark: #1A1A1A; 
+    --bg-light: #FAF0E6; /* Krem Muda */
+    --text-paragraph: #555555; 
+}
+
+/* 🛑 SOLUSI OVERLAP 1: Pastikan Z-INDEX TERTINGGI untuk semua ikon toggler */
+.fa-bars, .fa-xmark {
+    /* Aturan ini akan ditimpa di media query agar tampil */
+    display: none; 
+    color: var(--primary-color);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000; /* <-- Z-INDEX TERTINGGI */
+}
+
+/* --- GLOBAL RESET DAN STYLING DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    /* PERUBAHAN: Menghilangkan max-width agar full screen */
+    max-width: 100%; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Aktif link */
+.nav-links a.active {
+    color: var(--primary-color);
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+.nav-links a.active:hover {
+    color: var(--accent-color);
+}
+/* Dropdown button active style */
+.dropdown-menu .dropbtn.active {
+    /* PERUBAHAN: DITEBALKAN */
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* --- HEADER / NAVBAR STYLING --- */
+.navbar {
+    background-color: var(--text-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; 
+    top: 0;
+    z-index: 999; /* Pastikan di atas konten normal */
+}
+
+.navbar .container {
+    /* Perlu membatasi lebar konten di dalam navbar secara manual jika .container dihilangkan */
+    max-width: 1200px; /* Batasan lebar konten navbar */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 32px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 800; 
+    color: var(--primary-color);
+    display: flex; 
+    align-items: center; 
+}
+
+.logo img {
+    height: 56px;
+    margin-right: 30px; 
+}
+
+.nav-links {
+    /* Di desktop, nav-links akan flex-row (inline) */
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    font-size: 14px;
+    color: var(--text-dark);
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 600; 
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- DROPDOWN NAV BAR STYLING --- */
+.dropdown-menu {
+    float: left;
+    overflow: hidden;
+    margin-left: 20px; 
+    position: relative;
+}
+
+.dropdown-menu .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: var(--text-dark);
+    padding: 0 0;
+    background-color: inherit;
+    font-family: 'Poppins', sans-serif; 
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 600; 
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropbtn:hover {
+    color: var(--accent-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--text-light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px; 
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--text-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin: 0; 
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--bg-light); 
+    color: var(--primary-color);
+}
+
+/* Ini adalah perilaku dropdown untuk desktop/hover */
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+/* --- HERO SECTION STYLING --- */
+.hero-section {
+    position: relative;
+    height: 700px; 
+    /* 🛑 GANTI DENGAN INI (../ berarti keluar satu folder) */
+    background-image: url('../Picture/8.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; 
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Disesuaikan dengan --primary-color */
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 10; 
+    color: var(--text-light);
+    /* Karena .container dihilangkan, kita atur lebar konten di sini */
+    max-width: 1200px; /* Batas lebar konten Hero */
+    margin: 0 auto;
+    padding: 0 20px; 
+    text-align: left; 
+}
+
+.hero-title {
+    font-size: 68px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 800; 
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--text-light); 
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px; 
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 750px;
+}
+
+/* Tombol Explore Now */
+.explore-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 12px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.5s;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+}
+.explore-btn:hover {
+    color: var(--text-light);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* --- LAYANAN SECTION (Course) - SATU CARD --- */
+.course {
+    /* Konten di dalam .course harus dibatasi dan di tengah */
+    max-width: 1200px;
+    width: 90%; 
+    margin: auto;
+    text-align: center;
+    padding: 80px 0 0; 
+}
+
+.course h1 {
+    font-size: 36px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--text-dark);
+}
+
+.course p {
+    color: var(--text-paragraph);
+    font-size: 14px;
+    line-height: 22px;
+    padding: 10px;
+    margin-bottom: 40px; 
+}
+
+.modern-card-container {
+    /* Di desktop, gunakan 3 kolom yang rapi */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Optimasi untuk 3-4 kolom desktop */
+    gap: 30px; 
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.single-card-layout {
+    justify-content: center; 
+}
+
+.modern-card {
+    background: var(--text-light); 
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left; 
+    border-top: 5px solid var(--accent-color); 
+}
+
+.modern-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-5px);
+}
+
+.modern-card h3 {
+    text-align: left; 
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color); 
+}
+
+.modern-card h3 i {
+    margin-right: 8px;
+}
+
+.modern-card p {
+    padding: 0;
+    color: var(--text-paragraph);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- INTERACTIVE GALLERY STYLING (4 Kotak Hover) --- */
+.service-gallery {
+    padding: 20px 0 80px 0; 
+    background-color: var(--bg-light); 
+}
+
+.gallery-grid {
+    /* Harus dibatasi dan di tengah jika .container dihilangkan */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 350px; 
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+/* !!! MODIFIKASI HANYA DI SINI UNTUK MEMBUAT KARTU JENIS ABK SELALU MENAMPILKAN TEKS !!! */
+.gallery-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Diubah dari #9f512dd9 ke putih transparan atau semi-transparan */
+    background: rgba(255, 255, 255, 0.62); 
+    /* Diubah dari var(--text-light) ke var(--text-dark) agar teks terbaca */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    padding: 25px;
+    /* Diubah dari 0 menjadi 1 agar selalu terlihat */
+    opacity: 1; 
+    /* Hapus transisi opacity karena sudah tidak digunakan */
+    transition: none; 
+}
+
+.gallery-content h3 {
+    font-size: 20px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    margin-bottom: 10px;
+    line-height: 1.2;
+    /* Pastikan judul berwarna gelap/primer */
+    color: var(--primary-color); 
+}
+
+.gallery-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    /* Pastikan deskripsi berwarna gelap */
+    color: var(--text-paragraph); 
+    padding: 0; 
+}
+
+.read-more-btn {
+    color: var(--accent-color); 
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    font-size: 14px;
+    text-decoration: underline;
+    align-self: flex-start; 
+}
+
+/* HOVER EFFECT */
+.gallery-item:hover img {
+    transform: scale(1.1); 
+}
+
+/* !!! MODIFIKASI: Hapus opacity: 1 pada hover karena konten sudah opacity: 1 secara default !!! */
+.gallery-item:hover .gallery-content {
+    /* Tetap 1 atau biarkan kosong, tapi kita bisa tambahkan box-shadow sebagai pengganti highlight hover */
+    /* Menghapus aturan opacity: 1 yang tidak lagi diperlukan */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.38); 
+}
+
+/* --- SECTION: APA ITU ABK? STYLING --- */
+.apa-itu-abk-section {
+    background-color: var(--bg-light); 
+    padding: 100px 0;
+}
+
+.abk-content {
+    /* Batasi lebar konten di sini */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.abk-content .text-column {
+    flex-basis: 50%;
+}
+
+.abk-content .image-column {
+    flex-basis: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.abk-content .text-column h2 {
+    font-size: 38px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--primary-color); 
+    margin-bottom: 20px;
+}
+
+.abk-content .text-column p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-paragraph);
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.abk-quote {
+    font-style: italic;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--accent-color) !important; 
+    margin-top: 20px;
+    display: block;
+}
+
+/* --- WHY IMPORTANT SECTION STYLING (Kotak 2 Kolom) --- */
+.why-important {
+    background-color: var(--text-light); 
+    padding: 80px 0;
+    width: 100%;
+}
+
+.importance-content {
+    /* BATASAN LEBAR UNTUK KONTEN (Penting untuk menggantikan .container) */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    /* Diubah dari center ke flex-start agar kolom teks dan gambar sejajar di atas */
+    align-items: flex-start; 
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.text-column {
+    flex-basis: 50%;
+    /* Penyesuaian untuk membuat konten menjauh dari pinggir (lebih rapi di desktop) */
+    padding-left: 20px; 
+}
+
+.text-column h2 {
+    font-size: 42px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 800; 
+    color: var(--primary-color); 
+    margin-bottom: 20px;
+}
+
+.text-column p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-paragraph);
+    margin-bottom: 15px;
+    padding: 0; 
+}
+
+/* Mengatur paragraf penjelasan (yang bukan judul kecil) agar menjorok sedikit di desktop */
+/* Saya asumsikan p Landasan Teori/Hukum adalah yang pertama/kedua/ketiga di text-column */
+.text-column p:not(:first-of-type) {
+    /* Menjorokkan konten paragraf agar rapi di desktop */
+    padding-left: 20px; 
+}
+
+.image-column {
+    flex-basis: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-column img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* --- ADDITIONAL TEXT BOX STYLING --- */
+.additional-text-box {
+    background-color: var(--primary-color); 
+    padding: 60px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.additional-text-box .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.additional-text-box h2 {
+    color: var(--accent-color); 
+    font-size: 30px;
+    margin-bottom: 20px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+}
+
+.additional-text-box p {
+    color: var(--text-light); 
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+/* --- FOOTER STYLING --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background: var(--bg-light); 
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer h4 {
+    margin-bottom: 15px;
+    margin-top: 20px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--text-dark);
+}
+
+.icons .fa {
+    color: var(--accent-color);
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.fa-heart-o {
+    color: var(--accent-color);
+}
+
+/* --- SUB-HEADER TENTANG KAMI STYLING (Untuk tentang_kami.html) --- */
+.sub-header-tentang-kami {
+    position: relative;
+    height: 300px; 
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('images/hero-inklusifa.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-header-content h1 {
+    font-size: 36px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--text-light);
+}
+
+/* --- TENTANG KAMI CONTENT STYLING (Untuk tentang_kami.html) --- */
+.tentang-kami-content {
+    padding: 80px 0;
+    width: 100%;
+    max-width: 1200px; /* Batasi konten di sini */
+    margin: 0 auto;
+}
+
+.tentang-col h2 {
+    font-size: 30px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+/* --- STYLING KHUSUS UNTUK BAGIAN PERAN SEKOLAH (main-content / school-role-section) --- */
+/* Menggunakan class dari HTML revisi terakhir */
+.school-role-section {
+    background-color: var(--text-light);
+    padding: 80px 0;
+}
+
+.school-role-section .main-title {
+    font-size: 36px;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.school-role-section .main-description {
+    font-size: 16px;
+    margin-bottom: 50px;
+    color: var(--text-paragraph);
+    padding: 0 10px;
+}
+
+.school-grid-container {
+    /* Batasi konten di sini */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.school-role-section .role-card {
+    background: var(--bg-light); 
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.school-role-section .role-card:hover {
+    transform: translateY(-5px);
+}
+
+.school-role-section .card-title-colored {
+    font-size: 1.4rem;
+    color: var(--primary-color); 
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    /* PERUBAHAN: DITEBALKAN */
+    font-weight: 700; 
+}
+
+.school-role-section .card-title-colored i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.school-role-section .role-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.school-role-section .role-card li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+    color: var(--text-paragraph);
+}
+
+.school-role-section .role-card li:before {
+    content: "\f00c"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+/* END STYLING KHUSUS PERAN SEKOLAH */
+
+
+/* --- MEDIA QUERY UNTUK LAYAR SEDANG (Tablet) --- */
+@media (max-width: 1024px) {
+    
+    .navbar .container {
+        max-width: 100%; /* Agar navbar full width di tablet */
+    }
+
+    /* Galeri 2 kolom di Tablet */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Modern Card 2 kolom di Tablet */
+    .modern-card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .course {
+        width: 90%;
+    }
+    
+    /* Peran Sekolah 2 kolom di Tablet */
+    .school-grid-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .school-role-section .role-card {
+        flex-basis: calc(50% - 15px);
+    }
+    
+    /* Penyesuaian umum kolom 2 arah */
+    .importance-content, .abk-content {
+        gap: 30px;
+    }
+
+    /* Hilangkan padding kiri pada .text-column di Tablet agar tidak terlalu menjorok */
+    .text-column {
+        padding-left: 0; 
+    }
+}
+
+/* ======================================================
+MEDIA QUERY UNTUK RESPONSIVITAS MOBILE (HP/Tablet < 768px)
+======================================================
+*/
+@media (max-width: 768px) {
+    /* 🛑 Tampilkan Icon Hamburger di Mobile/Tablet */
+    .fa-bars, .fa-xmark {
+        display: block !important; 
+    }
+    .fa-xmark {
+        position: absolute; 
+        top: 15px;
+        right: 15px;
+        z-index: 10001; /* <-- PASTIKAN LEBIH TINGGI DARI .nav-links */
+    }
+
+    /* 🛑 SOLUSI OVERLAP 2: Menu Kontainer (Sliding Panel) */
+    .nav-links {
+        position: fixed; 
+        background: var(--bg-light); 
+        height: 100vh; 
+        width: 250px; 
+        top: 0;
+        /* SEMBUNYIKAN MENU DI KANAN */
+        right: -250px; 
+        text-align: left;
+        z-index: 10000; /* <-- Z-INDEX DITINGGIKAN AGAR MENUTUPI SEMUA KONTEN */
+        padding-top: 60px; 
+        transition: right 0.5s ease; 
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+        
+        /* Mengubah layout link menjadi vertikal */
+        display: flex !important; 
+        flex-direction: column; 
+        align-items: flex-start;
+        flex-wrap: nowrap; 
+    }
+
+    /* 4. Penataan Link Vertikal di Menu HP */
+    .nav-links a {
+        margin: 0; 
+        padding: 12px 20px; 
+        display: block; 
+        width: 100%;
+        color: var(--text-dark);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-links a.active {
+        border-bottom: none; 
+    }
+    
+    /* 5. Dropdown Menu di HP */
+    .dropdown-menu {
+        margin: 0;
+        float: none;
+        width: 100%;
+    }
+    .dropdown-menu .dropbtn {
+        padding: 12px 20px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-content {
+        position: relative; 
+        box-shadow: none;
+        margin-top: 0;
+        width: 100%;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-content a {
+        padding-left: 40px; 
+        font-size: 13px;
+        border-top: none;
+    }
+
+
+    /* 6. Penyesuaian Layout Bagian Konten (Kolom menumpuk) */
+    .hero-section { height: 500px; }
+    .hero-content { text-align: center; max-width: 90%; }
+    .hero-title { font-size: 40px; }
+    
+    .modern-card-container { grid-template-columns: 1fr; gap: 15px; } /* Card menumpuk di HP */
+    .course { width: 95%; padding: 40px 0 0; }
+    .modern-card { max-width: 100%; flex-basis: auto; }
+    .gallery-grid { grid-template-columns: 1fr; } /* Galeri menumpuk di HP */
+    
+    .importance-content, .abk-content { flex-direction: column; }
+    
+    /* Menentukan urutan elemen di mobile untuk tata letak yang lebih baik */
+    .abk-content .text-column { order: 2; }
+    .abk-content .image-column { order: 1; }
+    .text-column h2 { font-size: 32px; margin-top: 20px; }
+    
+    /* Pastikan padding yang ditambahkan untuk desktop dihilangkan di mobile */
+    .text-column {
+        padding-left: 0; 
+    }
+    .text-column p:not(:first-of-type) {
+        padding-left: 0; 
+    }
+
+    .additional-text-box h2 { font-size: 24px; }
+    .sub-header-tentang-kami { height: 200px; }
+    .sub-header-content h1 { font-size: 30px; }
+    .tentang-col h2 { font-size: 24px; }
+    
+    /* Peran Sekolah menumpuk di Mobile */
+    .school-grid-container {
+        flex-direction: column;
+    }
+    
+}

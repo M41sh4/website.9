@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEKA - Kisah Inspiratif: Muhammad K. Davi Ramadhan</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="Picture/logo.png" alt="Logo PEKA"> 
+                    PEKA
+                </a>
+            </div>
+
+            <span class="fa-solid fa-bars" onclick="showMenu()" id="menuOpen" arialabel="Buka Menu Navigasi"></span>
+            
+            <nav class="nav-links" id="navLinks" aria-label="Navigasi Utama">
+                <span class="fa-solid fa-xmark" onclick="hideMenu()" id="menuClose" arialabel="Tutup Menu Navigasi"></span>
+                
+                <a href="index.html">Beranda</a> 
+                
+                <a href="apa-itu-abk.html" >Apa Itu ABK</a>
+                <a href="jenis-abk.html">Jenis ABK</a>
+                
+                <a href="solusi-dan-dukungan.html">Solusi dan Dukungan</a> 
+                <a href="kisah-inspiratif.html" class="active">Kisah Inspiratif</a>
+            </nav>
+                
+        </div>
+    </header>
+    
+    <main>
+        <section class="main-content school-role-section">
+            <div class="container">
+                <h1 class="main-title">🌟 Kisah Inspiratif: Muhammad K. Davi Ramadhan</h1>
+                <p class="main-description">Semangat Davi, ABK Tuli dengan beragam bakat, dalam mengeksplorasi potensi diri.</p>
+                
+                <div class="role-card institution-role story-card-content">
+                    <article>
+                        <h3>Kondisi dan Keterbatasan Fisik</h3>
+                        <p>Muhammad K. Davi Ramadhan (Davi) adalah Anak Berkebutuhan Khusus (ABK) yang mengalami gangguan pendengaran (Tuli/Tuna Rungu), yang diyakini akibat janinnya terkena virus Campak saat ibunya hamil kakaknya. Selain tuli, Davi juga memiliki riwayat jantung bocor (sudah dipasang katup) dan katarak. Meskipun memiliki keterbatasan, Davi mampu melakukan kegiatan sehari-hari seperti makan, mandi, dan mencuci piring.
+                        
+                        </p>
+                        
+                        <h3>Pola Pengasuhan dan Tantangan Komunikasi</h3>
+                        <p>Pola pengasuhan yang diterapkan oleh ibunya adalah membiarkan Davi mengeksplorasi dan bebas bermain selama itu tidak membahayakan dirinya dan orang lain, meskipun ia masih harus dipantau. Tantangan terbesar bagi ibunya adalah masalah komunikasi. Karena keterbatasan dalam penyampaian, Davi sering uring-uringan atau tantrum jika maksudnya tidak dimengerti. Saat ini, di usia 10 tahun, tingkat penyerapannya setara dengan anak TK karena baru masuk sekolah pada usia 8 tahun.</p>
+                        
+                        <h3>Bakat Unik dan Dukungan Keluarga</h3>
+                        <p>Davi dikenal sebagai anak yang sangat pede dan random dalam bakat. Ia menyukai dan mencoba banyak hal, termasuk menggambar animasi, pantomim, melukis, teater, dan tampil sebagai penerjemah bahasa isyarat di sekolah. 
+                        
+                        Keluarga besar memberikan dukungan penuh melalui support dan doa. Harapan terbesar ibunya adalah agar Davi, seiring bertambahnya usia, bisa berdiri di kaki sendiri dan menjadi orang sukses.</p>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                <a href="kisah-inspiratif.html" class="explore-btn">Kembali Ke Kisah Inspiratif →</a>
+            </div>
+            
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <h4>Hubungi Kami</h4>
+        <p>Kami terbuka untuk mendengarkan kebutuhan Anda dan berkolaborasi dalam mendukung anak Anda.</p>
+        <div class="icons">
+            <span class="fa-solid fa-envelope" aria-hidden="true"></span> 
+        </div>
+        <p>Dibuat dengan <span class="fa-solid fa-heart" aria-hidden="true"></span> untuk Komunitas Inklusif</p>
+    </footer>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var menuOpenIcon = document.getElementById("menuOpen");
+        var menuCloseIcon = document.getElementById("menuClose");
+
+        function showMenu(){
+            navLinks.style.right = "0"; 
+            menuOpenIcon.style.display = "none"; 
+            setTimeout(function() { menuCloseIcon.style.display = "block"; }, 300); 
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-250px"; 
+            menuOpenIcon.style.display = "block"; 
+            menuCloseIcon.style.display = "none";
+        }
+        
+        function checkScreenSize() {
+             if (window.innerWidth > 768) {
+                 navLinks.style.right = '0';
+                 menuOpenIcon.style.display = "none"; 
+                 menuCloseIcon.style.display = "none";
+            } else {
+                navLinks.style.right = '-250px';
+                menuOpenIcon.style.display = "block";
+                menuCloseIcon.style.display = "none";
+            }
+        }
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEKA - Kisah Inspiratif: Rezky Putra Hilmansyah</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="Picture/logo.png" alt="Logo PEKA"> 
+                    PEKA
+                </a>
+            </div>
+
+            <span class="fa-solid fa-bars" onclick="showMenu()" id="menuOpen" arialabel="Buka Menu Navigasi"></span>
+            
+            <nav class="nav-links" id="navLinks" aria-label="Navigasi Utama">
+                <span class="fa-solid fa-xmark" onclick="hideMenu()" id="menuClose" arialabel="Tutup Menu Navigasi"></span>
+                
+                <a href="index.html">Beranda</a> 
+                
+                <a href="apa-itu-abk.html" >Apa Itu ABK</a>
+                <a href="jenis-abk.html">Jenis ABK</a>
+                
+                <a href="solusi-dan-dukungan.html">Solusi dan Dukungan</a> 
+                <a href="kisah-inspiratif.html" class="active">Kisah Inspiratif</a>
+            </nav>
+                
+        </div>
+    </header>
+    
+    <main>
+        <section class="main-content school-role-section">
+            <div class="container">
+                <h1 class="main-title"> 🌟 Kisah Inspiratif: Rezky Putra Hilmansyah</h1>
+                <p class="main-description">Rezky, siswa tunanetra berprestasi, membuktikan bahwa disabilitas adalah kesempatan untuk menjadi manusia berkelas.</p>
+                
+                <div class="role-card institution-role story-card-content">
+                    <article>
+                        <h3>Adaptasi Belajar dan Kecakapan Sosial</h3>
+                        <p>Rezky Putra Hilmansyah, siswa tunanetra dari MAN 11 Jakarta, menunjukkan kecakapan adaptasi dalam belajar dengan cara mengulang dan menjelaskan materi kepada diri sendiri menggunakan bahasa yang lebih mudah dipahami. Ia mengandalkan indra pendengaran dan memilih praktek langsung sebagai metode belajar yang paling efektif. Di sekolah inklusi, Rezky memiliki hubungan sosial yang sangat baik, merasa teman-temannya sangat peduli, dan dikenal memiliki wawasan sejarah yang luas serta kemampuan berdiskusi yang tinggi.</p>
+                        
+                        <h3>Bakat Unggul di Bidang Catur</h3>
+                        <p>Bakat unggul Rezky terletak pada bidang catur, yang ia mulai latih sejak kelas 6 untuk meningkatkan prestasi dan kemampuan berpikir. Proses latihannya dimulai secara otodidak, dilanjutkan dengan bimbingan guru dan partisipasi dalam program pembinaan.
+                        
+                        </p>
+                        
+                        <h3>Cita-Cita dan Filosofi Hidup</h3>
+                        <p>Dengan visi yang besar, Rezky memiliki cita-cita unik untuk menjadi Presiden atau politisi. Ia menyampaikan pesan inspiratif bahwa menjadi disabilitas bukanlah hambatan, melainkan justru kesempatan untuk melatih diri menjadi manusia yang berkelas.</p>
+                    </article>
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                <a href="kisah-inspiratif.html" class="explore-btn">Kembali Ke Kisah Inspiratif →</a>
+            </div>
+                
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <h4>Hubungi Kami</h4>
+        <p>Kami terbuka untuk mendengarkan kebutuhan Anda dan berkolaborasi dalam mendukung anak Anda.</p>
+        <div class="icons">
+            <span class="fa-solid fa-envelope" aria-hidden="true"></span> 
+        </div>
+        <p>Dibuat dengan <span class="fa-solid fa-heart" aria-hidden="true"></span> untuk Komunitas Inklusif</p>
+    </footer>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        var menuOpenIcon = document.getElementById("menuOpen");
+        var menuCloseIcon = document.getElementById("menuClose");
+
+        function showMenu(){
+            navLinks.style.right = "0"; 
+            menuOpenIcon.style.display = "none"; 
+            setTimeout(function() { menuCloseIcon.style.display = "block"; }, 300); 
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-250px"; 
+            menuOpenIcon.style.display = "block"; 
+            menuCloseIcon.style.display = "none";
+        }
+        
+        function checkScreenSize() {
+             if (window.innerWidth > 768) {
+                 navLinks.style.right = '0';
+                 menuOpenIcon.style.display = "none"; 
+                 menuCloseIcon.style.display = "none";
+            } else {
+                navLinks.style.right = '-250px';
+                menuOpenIcon.style.display = "block";
+                menuCloseIcon.style.display = "none";
+            }
+        }
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+    </script>
+    
+</body>
+</html>
